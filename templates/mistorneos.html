@@ -1,0 +1,80 @@
+{% load static %}
+{% include 'partePrincipal.html'%}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Mis torneos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="{% static '/listado.css/' %}" rel="stylesheet">
+  <link href="{% static '/footerr.css' %}" rel="stylesheet">
+</head>
+<body background="{% static '/imagenes/Futbolfondo1.jpg' %}">
+  <br>
+  <center><h1><font color="#BFA530"><p style = "Font-family: Tahoma, Verdana, Segoe, sans-serif"><u>Torneos</u></p></h1></font></center>
+ <nav class="navbar navbar-light ">
+  <div class="container-fluid">
+    <a class="btn btn-primary" href="/agregarTorneo/" role="button" style = "font-family: Lucida Bright, Georgia;">Registrar Torneo</a>
+    <form class="d-flex" action="/buscarTorneo/" method="GET">
+      {% csrf_token %}
+      <input class="form-control me-2" type="search" autocomplete="off" placeholder="Buscar" aria-label="Search" name="textobuscar">
+      <button class="btn btn-danger" type="submit" style = "font-family: Lucida Bright, Georgia;">Buscar</button>
+    </form>
+  </div>
+</nav>
+  <div>
+      <br>
+  <font color="white"><h5 style = "font-family: Lucida Bright, Georgia;" >&nbsp Torneos actuales:</h5></font>
+  <br>
+  </div>
+  <div class="container centrado">
+    <div class="row">
+      <div class="">
+        <div class="table-responsive">
+          <table class="table table-success table-bordered">
+            <thead>
+              <tr class="table-secondary">
+                <th class="centrado" style = "font-family: Lucida Bright, Georgia;">Indice</th>
+                <th class="centrado" style = "font-family: Lucida Bright, Georgia;">Nombres</th>
+                <th class="centrado" style = "font-family: Lucida Bright, Georgia;">Alias</th>
+                <th class="centrado" style = "font-family: Lucida Bright, Georgia;">Numero Equipos</th>
+                <th class="centrado" style = "font-family: Lucida Bright, Georgia;">Fecha Inicio</th>
+                <th class="centrado" style = "font-family: Lucida Bright, Georgia;">Fecha Fin</th>
+                <th class="centrado" colspan="3" style = "font-family: Lucida Bright, Georgia;">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for c in listaTorneo %}
+              <tr>
+                <td> <img src="https://cdn.icon-icons.com/icons2/343/PNG/512/Football-pitch_35793.png" width="40" height="40"> {{forloop.counter}}</td>
+                <td>{{c.nombre}}</td>
+                <td>{{c.alias}}</td>
+                <td>{{c.numeroEquipo}}</td>
+                <td>{{c.fechaInicio}}</td>
+                <td>{{c.fechaFin}}</td>
+                <td>
+                  <a href="/editarTorneo/{{c.id}}" class="btn btn-sm btn-block btn-info" style = "font-family: Lucida Bright, Georgia;">Editar</a>
+                  <a href="/eliminarTorneo/{{c.id}}" class="btn btn-sm btn-block btn-danger" style = "font-family: Lucida Bright, Georgia;">Eliminar</a>
+                  <a href="/masTorneo/{{c.id}}" class="btn btn-sm btn-block btn-danger" style = "font-family: Lucida Bright, Georgia;">Ver</a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+{% include 'parteFinal.html'%}
+{% block content %} {% endblock content %}
+  <script src="{% static '/sidebars.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,140 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Administrador de Cancha Deportiva</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static '/carousel.css' %}" rel="stylesheet">
+  </head>
+    
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark nav justify-content-end">    
+      <a class="navbar-brand" href="/index/">Inicio</a> 
+      <a class="navbar-brand" href="#">Acceso Cliente</a>
+      <a class="navbar-brand" href="#">Soporte</a> 
+  </nav>     
+  
+</header>
+
+<main>
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://www.adidas-group.com/media/filer_public_thumbnails/filer_public/2013/12/04/adidas_brazuca.jpg__1200x630_q85_autocrop_crop-smart_subsampling-2_upscale.jpg"  class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1 style = "font-family: Perpetua, Baskerville, Big Caslon, Palatino Linotype, Palatino;">Organiza y Administra Torneos</h1>
+             <h3 style = "font-family: Perpetua, Baskerville, Big Caslon, Palatino Linotype, Palatino;">Toma el control de tus torneos</h3>
+            <p style = "font-family: Lucida Bright, Georgia;"><a class="btn btn-lg btn-primary" href="/loginAdmin/">Crea un torneo</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="http://www.solofondos.com/wp-content/uploads/2016/02/fondos-de-pantalla-de-futbol-jugadores.jpg" class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1 style = "font-family: Perpetua, Baskerville, Big Caslon, Palatino Linotype, Palatino;">Visualiza los Encuentros</h1>
+            <h3 style = "font-family: Perpetua, Baskerville, Big Caslon, Palatino Linotype, Palatino;">Podras ver los encuentros</h3>
+            <p style = "font-family: Lucida Bright, Georgia;"><a class="btn btn-lg btn-primary" href="/loginAdmin/">Ver mas</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.adidas-group.com/media/filer_public_thumbnails/filer_public/2013/12/04/adidas_brazuca.jpg__1200x630_q85_autocrop_crop-smart_subsampling-2_upscale.jpg"  class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1 style = "font-family: Perpetua, Baskerville, Big Caslon, Palatino Linotype, Palatino;">Campeón del Torneo</h1>
+            <h3 style = "font-family: Perpetua, Baskerville, Big Caslon, Palatino Linotype, Palatino;">Resumen de los torneos y mas</h3>
+            <p style = "font-family: Lucida Bright, Georgia;"><a class="btn btn-lg btn-primary" href="#">Ver mas</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <hr class="featurette-divider">
+  <div class="container marketing">
+
+    <div class="row">
+      <div class="col-lg-4">
+        <img src="https://cdn.icon-icons.com/icons2/39/PNG/128/organizer_calendar_pen_note_6134.png" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title></title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+
+        <h2 style = "font-family: Lucida Bright, Georgia;">Organiza Torneos</h2>
+        <p style = "font-family: Lucida Bright, Georgia;">Crea un torneo, encuentros, equipos, tabla de posiciones</p>
+      </div>
+      <div class="col-lg-4">        
+        <img src="https://cdn.icon-icons.com/icons2/1193/PNG/512/1490877822-sport-badges08_82413.png" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title></title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></svg>
+
+        <h2 style = "font-family: Lucida Bright, Georgia;">Automatiza el trabajo manual</h2>
+        <p style = "font-family: Lucida Bright, Georgia;">Ahorra tiempo con tablas, cruces y rankings automáticos.</p>
+      </div>
+      <div class="col-lg-4">
+        <img src="https://cdn.icon-icons.com/icons2/1193/PNG/512/1490877821-sport-badges02_82418.png" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title></title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text>
+
+        <h2 style = "font-family: Lucida Bright, Georgia;">Se una leyenda</h2>
+        <p style = "font-family: Lucida Bright, Georgia;">Ten un perfil de futbolista, con tu historial de goles, asistencias, partidos.</p>
+      </div>
+    </div>
+    <hr class="featurette-divider">
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading" style = "font-family: Lucida Bright, Georgia;">Descarga Nuestra aplicación Movil <span class="text-muted"></span></h2>
+        <p class="lead" style = "font-family: Lucida Bright, Georgia;">Desde nuestra aplicación podras ver e ingresar a cada torneo de manera rápida y segura. ¡Descargala ahora!</p>
+      </div>
+      <div class="col-md-5">
+        <img src="https://www.solofondos.com/wp-content/uploads/2016/02/01701.jpg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="225" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title></title><rect width="100%" height="100%" fill="#777"/><text x="75%" y="75%" fill="#777" dy=".3em"></text>
+    
+      </div>
+    </div>
+  </div>
+</main>
+{% include 'footer.html'%}
+{% block content %} {% endblock content %}
+    <script src="{% static '../assets/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  </body>
+</html>
+

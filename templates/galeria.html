@@ -1,0 +1,182 @@
+{% load static %}
+{% include 'partePrincipal.html'%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Galeria</title>
+	<style type="text/css">
+/*implementacion de atributos a nuestros titulos y texto en especifico*/
+
+@import url(https://fonts.googleapis.com/css?family=Erica+One);
+/* BODY */
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;  
+  height: 100%;
+  background-color: pink;
+ 
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+::selection {
+  background: transparent;
+}
+
+h1 {
+  cursor: default;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  margin: auto;
+  display: block;
+  
+  -webkit-animation: bounce .3s ease infinite alternate;
+  
+  font-family: 'Erica One', cursive;
+  font-size: 40px;
+  color: #FFF;
+  text-align: center;
+  line-height: 100px;
+  text-shadow: 0 1px 0 #CCC,
+               0 2px 0 #CCC,
+               0 3px 0 #CCC,
+               0 4px 0 #CCC,
+               0 5px 0 #CCC,
+               0 6px 0 transparent,
+               0 7px 0 transparent,
+               0 8px 0 transparent,
+               0 9px 0 transparent,
+               0 10px 10px rgba(0, 0, 0, .6);
+}
+/* ANIMATION */
+@-webkit-keyframes bounce {
+  100% {
+    top: -30px;
+    
+    text-shadow: 0 1px 0 #CCC,
+                 0 2px 0 #CCC,
+                 0 3px 0 #CCC,
+                 0 4px 0 #CCC,
+                 0 5px 0 #CCC,
+                 0 6px 0 #CCC,
+                 0 7px 0 #CCC,
+                 0 8px 0 #CCC,
+                 0 9px 0 #CCC,
+                 0 30px 30px rgba(0, 0, 0, .3);
+  }
+}
+
+/*trabajamos con los elementos de nuestra animacion tipo carrusel*/
+.carrusel {
+    display: flex;/*alineacion de elementos a una sola direccion*/
+    gap: 10px;/*seperacion de los elementos*/
+    justify-content: center;
+  }
+  
+.carrusel ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 700px;
+    margin-left: 70px;
+    border-left-color: chartreuse;
+    scroll-behavior: smooth;/*estilo de desplazamiento de los elementos*/
+  }
+  
+.carrusel-fotos {
+    display: flex;/*alineacion de elementos a una sola direccion*/
+    gap: 10px;/*seperacion de los elementos*/
+    overflow: auto;/*desplazamiento de elementos con una barra*/
+  }
+  
+.carrusel-fotos img {
+    background:brown;
+    border: 4px solid black;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;/*ajuste de imagenes a un solo tamaño deseado*/ 
+  }
+  
+.carrusel-menu {
+    display: none;
+  }
+  
+/*modificacion de la imagen y añadimos una animacion para mejorar la presentacion*/
+.imagen{
+    border-radius: 20px;
+    border: 4px solid black;
+    width:40px;
+    height:40px;
+}
+
+/*Establecemos los protocolos de compatibilidad*/
+.imagen img{
+  -webkit-transition: all 1.9s ease;
+  -moz-transition: all 1.9s ease;
+  -o-transition: all 1.9s ease;
+  -ms-transition: all 1.9s ease;
+  transition: all 1.9s ease;
+  width: 100%;
+}
+
+/*acciones al momento de posicionar el cursor sobre la imagen*/
+.imagen:hover{
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  -ms-transform: scale(1.25);
+  transform: scale(1.25);
+  transition-property: left,top;
+  transition-duration: 3s,5s;
+  width: 60px;
+  height: 60px;
+}
+	</style>
+</head>
+<body>
+    <div><br>
+    	<h1>
+    		Los mejores jugadores del mundo para inspirarte
+    	</h1>
+    </div><br>
+    <!-- Con una division establecemos la division de la zona de trabajo-->
+    <!-- utilizamos una etiqueta que simula una lista no ordenada ul -->
+    <div class="carrusel">
+        <ul class="carrusel-fotos">
+            <!-- establecemos los elementos de la lista con li -->
+            <li id="foto1"> <img src="{% static '/imagenes/grizi1.jpg' %}"></li>
+            <li id="foto2"> <img src="{% static '/imagenes/piero.jpg' %}"></li>
+            <li id="foto3"> <img src="{% static '/imagenes/messi.jpg' %}"></li>
+            <li id="foto4"> <img src="{% static '/imagenes/moises.jpeg' %}"></li>
+            <li id="foto5"> <img src="{% static '/imagenes/levan.jpg' %}"></li>
+            <li id="foto6"> <img src="{% static '/imagenes/haland.jpg' %}"></li>
+            <li id="foto7"> <img src="{% static '/imagenes/ronaldo.jpg' %}"></li>
+        </ul>
+    </div>
+    <hr>
+
+    <table style="border: none;"> 
+        <td>
+  			<a class="label2" href=/administrador/ role="button" style = "font-family: Lucida Bright, Georgia;">Regresar</a>
+  			&nbsp
+        </td>
+    </table>
+
+    </div>
+
+	{% include 'parteFinal.html'%}
+	{% block content %} {% endblock content %}
+    <script src="{% static '/sidebars.js' %}"></script>
+</body>
+</html>

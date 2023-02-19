@@ -1,0 +1,59 @@
+{% load static %}
+{% include 'partePrincipal.html'%}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Agregar Jugadores</title>
+</head>
+<body background="{% static '/imagenes/Futbolfondo1.jpg' %}">
+<br>
+  <font color="black"><h5 style = "Font-family: Tahoma, Verdana, Segoe, sans-serif">&nbsp Ingrese los datos del Jugador:</h5></font>
+<br>
+<form class="row g-3" action="" method="GET" autocomplete="off">
+  {% csrf_token %}
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Pertenece al Equipo</label></font>
+      <h6>&nbsp {{formularioJugador.PropiedadEquipo}}</h6>
+  </div>
+   <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Nombre</label></font>
+      <h6>{{formularioJugador.nombre}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Apellido</label></font>
+      <h6>{{formularioJugador.apellido}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Correo</label></font>
+      <h6>&nbsp {{formularioJugador.correo}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Celular</label></font>
+      <h6>{{formularioJugador.celular}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Cedula</label></font>
+      <h6>{{formularioJugador.cedula}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Posicion</label></font>
+      <h6>&nbsp {{formularioJugador.posicion_Jugador}}</h6>
+  </div>
+     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <input type="submit" value="Guardar" class="btn btn-primary" style = "font-family: Lucida Bright, Georgia;">
+      &nbsp
+      <a class="btn btn-primary" href="/jugadores/" role="button" style = "font-family: Lucida Bright, Georgia;">Cancelar</a>
+      &nbsp
+      </div>
+</form> 
+<br>
+<br>
+<br>
+<br>
+<br>
+&nbsp
+{% include 'parteFinal.html'%}
+{% block content %} {% endblock content %}
+</body>
+</html>

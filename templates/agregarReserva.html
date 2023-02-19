@@ -1,0 +1,58 @@
+{% load static %}
+{% include 'partePrincipal.html'%}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Agregar Reservas</title>
+</head>
+<body background="{% static '/imagenes/Futbolfondo1.jpg' %}">
+  <br>
+  <font color="white"><h5 style = "Font-family: Tahoma, Verdana, Segoe, sans-serif">&nbsp Ingrese los datos de la Reserva:</h5></font>
+<br>
+<form class="row g-3" action="" method="GET" autocomplete="off">
+  {% csrf_token %}
+  <div class="col-md-4">
+      <font color="white"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Pertenece al Torneo</label></font>
+      <h6>&nbsp {{formularioTicket.PropiedadTorneo}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="white"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Nombre</label></font>
+      <h6>{{formularioTicket.nombre}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="white"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Apellido</label></font>
+      <h6>{{formularioTicket.apellido}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="white"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Correo Electronico</label></font>
+      <h6>&nbsp {{formularioTicket.correo}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="white"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Cedula</label></font>
+      <h6>{{formularioTicket.cedula}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="white"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Estado</label></font>
+      <h6>{{formularioTicket.estado_Ticket}}</h6>
+  </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <input type="submit" value="Guardar" class="btn btn-primary" style = "font-family: Lucida Bright, Georgia;">
+      &nbsp
+      <a class="btn btn-primary" href="/ticket/" role="button" style = "font-family: Lucida Bright, Georgia;">Cancelar</a>
+      &nbsp
+  </div>
+</form> 
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% include 'parteFinal.html'%}
+{% block content %} {% endblock content %}
+</html>

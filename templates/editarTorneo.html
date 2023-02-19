@@ -1,0 +1,61 @@
+{% load static %}
+{% include 'partePrincipal.html'%}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>	Editar Torneo</title>
+</head>
+<body background="{% static '/imagenes/Futbolfondo2.jpg' %}">
+  <br>
+   <font color="black"><h5 style = "Font-family: Tahoma, Verdana, Segoe, sans-serif">&nbsp Ingrese los datos a Editar:</h5></font>
+   <br>
+ <form class="row g-3" action="" method="GET" autocomplete="off">
+    {% csrf_token %}
+    <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Nombre</label></font>
+      <h6>&nbsp {{form.nombre}}</h6>
+    </div>
+    <div class="col-md-4">
+       <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Alias</label></font>
+      <h6>{{form.alias}}</h6>
+    </div>
+    <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Numero de equipos</label></font>
+      <h6>{{form.numeroEquipo}}</h6>
+    </div>
+    <div class="col-md-4">
+      <font color="white"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Descripcion</label></font>
+      <h6>&nbsp {{form.descripcion}}</h6>
+    </div>
+    <div class="col-md-4">
+       <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Fecha de inicio</label></font>
+      <h6>{{form.fechaInicio}}</h6>
+    </div>
+    <div class="col-md-4">
+       <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Fecha de finalizacion</label></font>
+      <h6>{{form.fechaFin}}</h6>
+    </div>
+    <div class="col-md-4">
+       <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Tipo de torneo</label></font>
+       &nbsp {{form.tipo_Tor}}
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <input type="submit" value="Editar" class="btn btn-primary" style = "font-family: Lucida Bright, Georgia;">
+      &nbsp
+      <a class="btn btn-primary" href="/torneo/" role="button" style = "font-family: Lucida Bright, Georgia;">Cancelar</a>
+      &nbsp
+    </div>
+  </form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+&nbsp
+&nbsp
+{% include 'parteFinal.html'%}
+{% block content %} {% endblock content %}
+</body>
+</html>

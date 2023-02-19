@@ -1,0 +1,63 @@
+{% load static %}
+{% include 'partePrincipal.html'%}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title> Mis torneos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="{% static '/listado.css/' %}" rel="stylesheet">
+</head>
+<body background="{% static '/imagenes/Futbolfondo1.jpg' %}">
+ <br>
+  <center><h2><font color="white"><p style = "Font-family: Tahoma, Verdana, Segoe, sans-serif"><u>Torneo</u></p></h2></font></center>
+  <br>
+  <font color="white"><h5 style = "Font-family: Tahoma, Verdana, Segoe, sans-serif">&nbsp Resultado de la busqueda:</h5></font>
+<br>
+<div class="centrado container">
+<div class="card mb-3" style="max-width: 800px;left: 15%;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <br>
+      <br>
+      <br>
+      <br>
+        <img src="https://www.nicepng.com/png/full/78-789939_la-decoracin-de-la-copa-del-mundo-de.png" alt="..." style="width:280px";>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title" style = "font-family: Lucida Bright, Georgia;">Detalles del Torneo</h5>
+        <p class="text-start"> 
+          {% for c in torneo %}
+          <ul class="list-group">
+            <li class="list-group-item text-start" style = "font-family: Lucida Bright, Georgia;">Nombres: {{c.nombre}}</li>
+            <li class="list-group-item text-start" style = "font-family: Lucida Bright, Georgia;">Alias: {{c.alias}}</li>
+            <li class="list-group-item text-start" style = "font-family: Lucida Bright, Georgia;">Numero de equipos: {{c.numeroEquipo}}</li>
+            <li class="list-group-item text-start" style = "font-family: Lucida Bright, Georgia;">Fecha de inicio: {{c.fechaInicio}}</li>
+            <li class="list-group-item text-start" style = "font-family: Lucida Bright, Georgia;">Fecha de finalizacion: {{c.fechaFin}}</li>
+          </ul>
+          {% endfor %}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<br>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-primary" href="/torneo/" role="button"style = "font-family: Lucida Bright, Georgia;">Regresar</a>
+         &nbsp
+    </div>
+<br>
+{% include 'parteFinal.html'%}
+{% block content %} {% endblock content %}
+
+  <script src="{% static '/sidebars.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+</body>
+</html>

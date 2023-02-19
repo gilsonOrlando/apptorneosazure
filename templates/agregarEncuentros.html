@@ -1,0 +1,68 @@
+{% load static %}
+{% include 'partePrincipal.html'%}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Agregar Encuentro</title>
+</head>
+<body background="{% static '/imagenes/Futbolfondo1.jpg' %}">
+<br>
+  <font color="black"><h5 style = "Font-family: Tahoma, Verdana, Segoe, sans-serif">&nbsp Ingrese los datos del Encuentro:</h5></font>
+  <font color="black" style = "Font-family: Tahoma, Verdana, Segoe, sans-serif"><h5>&nbsp Los campos de goles y faltas rellenarlas posterior al encuentro</h5></font>
+<br>
+<form class="row g-3" action="" method="GET" autocomplete="off">
+  {% csrf_token %}
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Pertenece al torneo</label></font>
+      <h6>&nbsp {{formularioEncuentro.PropiedadTorneo}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Nombre Equipo A</label></font>
+      <h6>{{formularioEncuentro.nombreA}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Nombre Equipo B</label></font>
+      <h6>{{formularioEncuentro.nombreB}}</h6>
+  </div>
+   <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Fecha (ddd/mmm/yyy)</label></font>
+      <h6>&nbsp {{formularioEncuentro.fechaPartido}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Hora  (hhh/mmm)</label></font>
+      <h6>{{formularioEncuentro.hora}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Goles equipo A</label></font>
+      <h6>{{formularioEncuentro.golesA}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Goles equipo B</label></font>
+      <h6>&nbsp {{formularioEncuentro.golesB}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="white"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Faltas Totales</label></font>
+      <h6>{{formularioEncuentro.faltas}}</h6>
+  </div>
+   <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Rojas</label></font>
+      <h6>{{formularioEncuentro.tarjetaRoja}}</h6>
+  </div>
+   <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Amarillas</label></font>
+      <h6>&nbsp {{formularioEncuentro.tarjetaAmarilla}}</h6>
+  </div>
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <input type="submit" value="Guardar" class="btn btn-primary" style = "font-family: Lucida Bright, Georgia;">
+      &nbsp
+      <a class="btn btn-primary" href="/encuentro/" role="button" style = "font-family: Lucida Bright, Georgia;">Cancelar</a>
+      &nbsp
+    </div>
+</form> 
+<br>
+{% include 'parteFinal.html'%}
+{% block content %} {% endblock content %}
+</body>
+</html>

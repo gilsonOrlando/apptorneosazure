@@ -1,0 +1,59 @@
+{% load static %}
+{% include 'partePrincipal.html'%}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Editar Perfil</title>
+</head>
+<body background="https://static.vecteezy.com/system/resources/previews/002/034/021/non_2x/abstract-dynamic-light-blue-overlap-square-shape-on-background-modern-and-minimal-concept-you-can-use-for-cover-brochure-template-poster-banner-web-print-ad-etc-illustration-vector.jpg">
+  <br>
+   <font color="black"><h5 style = "Font-family: Tahoma, Verdana, Segoe, sans-serif">&nbsp Ingrese los datos a Editar:</h5></font>
+  <br>
+<form class="row g-3" action="" method="GET" autocomplete="off">
+  {% csrf_token %}
+    <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Nombre</label></font>
+      <h6>&nbsp {{form.nombre}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Apellido</label></font>
+      <h6>{{form.apellido}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Correo</label></font>
+      <h6>{{form.correo}}</h6>
+  </div>
+   <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Celular</label></font>
+      <h6>&nbsp {{form.celular}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Usuario</label></font>
+      <h6>{{form.user}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">Clave nueva</label></font>
+      <h6>{{form.contra}}</h6>
+  </div>
+  <div class="col-md-4">
+      <font color="black"><label class="form-label" style = "font-family: Lucida Bright, Georgia;">&nbsp Cedula </label></font>
+      <h6>&nbsp {{form.cedula}}</h6>
+  </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <input type="submit" value="Editar" class="btn btn-primary" style = "font-family: Lucida Bright, Georgia; color: black;">
+      &nbsp
+      <a class="btn btn-primary" href="/perfil/" role="button" style = "font-family: Lucida Bright, Georgia;color: black;">Cancelar</a>
+      &nbsp
+  </div>
+</form> 
+<br> 
+<br> 
+<br>
+<br> 
+<br> 
+<br>
+{% include 'parteFinal.html'%}
+{% block content %} {% endblock content %}
+</body>
+</html>
